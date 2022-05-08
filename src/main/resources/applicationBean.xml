@@ -35,6 +35,16 @@
     <!--3 P名称空间注入-->
     <bean id="apple" class="com.zt1994.bean.Apple" p:name="big"></bean>
 
+    <!--4 xml 注入外部bean-->
+    <bean id="userService" class="com.zt1994.service.UserService">
+        <!--注入userDao对象
+            name属性：类里面属性名称
+            ref属性：创建UserDao对象bean标签id值
+        -->
+        <property name="userDao" ref="userDaoImpl"/>
+    </bean>
+    <bean id="userDaoImpl" class="com.zt1994.dao.UserDaoImpl"></bean>
+
 
 
 </beans>
