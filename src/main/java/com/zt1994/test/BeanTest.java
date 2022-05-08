@@ -1,5 +1,6 @@
 package com.zt1994.test;
 
+import com.zt1994.bean.Apple;
 import com.zt1994.bean.Cat;
 import com.zt1994.bean.Dog;
 import org.junit.Test;
@@ -34,5 +35,13 @@ public class BeanTest {
         Dog dog = context.getBean("dog", Dog.class);
         System.out.println(dog.getName());
         System.out.println(dog);
+    }
+
+    @Test
+    public void beanTest3() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
+        Apple apple = context.getBean("apple", Apple.class);
+        System.out.println(apple.getName());
+        System.out.println(apple);
     }
 }
