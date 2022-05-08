@@ -4,6 +4,7 @@ import com.zt1994.bean.Apple;
 import com.zt1994.bean.Cat;
 import com.zt1994.bean.Dog;
 import com.zt1994.bean.Emp;
+import com.zt1994.collectiontype.Course;
 import com.zt1994.collectiontype.ReadBook;
 import com.zt1994.collectiontype.Stu;
 import com.zt1994.service.UserService;
@@ -83,5 +84,15 @@ public class BeanTest {
 
         ReadBook readBook = context.getBean("readBook", ReadBook.class);
         readBook.test();
+    }
+
+    /**
+     * FactoryBean
+     */
+    @Test
+    public void beanTest7() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
+        Course myBean = context.getBean("myBean", Course.class);
+        System.out.println(myBean);
     }
 }

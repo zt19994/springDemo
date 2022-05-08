@@ -128,4 +128,7 @@
     <!--引入外部属性文件-->
     <context:property-placeholder location="classpath:test.properties"/>
 
+    <!--factoryBean实现-->
+    <bean id="myBean" class="com.zt1994.facbean.MyBean"></bean>
+
 </beans>
