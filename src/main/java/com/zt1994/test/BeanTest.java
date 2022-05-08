@@ -4,6 +4,8 @@ import com.zt1994.bean.Apple;
 import com.zt1994.bean.Cat;
 import com.zt1994.bean.Dog;
 import com.zt1994.bean.Emp;
+import com.zt1994.collectiontype.ReadBook;
+import com.zt1994.collectiontype.Stu;
 import com.zt1994.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -67,6 +69,19 @@ public class BeanTest {
     public void beanTest5() {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
         Emp emp = context.getBean("emp", Emp.class);
-        System.out.println(emp);
+        emp.add();
+    }
+
+    /**
+     * 集合类型属性注入
+     */
+    @Test
+    public void beanTest6() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
+        Stu stu = context.getBean("stu", Stu.class);
+        stu.test();
+
+        ReadBook readBook = context.getBean("readBook", ReadBook.class);
+        readBook.test();
     }
 }
