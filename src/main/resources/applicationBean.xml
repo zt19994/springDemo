@@ -15,6 +15,16 @@
             value：向属性注入的值
         -->
         <property name="name" value="lina"/>
+
+        <!--设置null-->
+        <!--<property name="name">
+            <null/>
+        </property>-->
+
+        <!--设置特殊字符-->
+        <!--<property name="name">
+            <value><![CDATA[<<23333>>]]></value>
+        </property>-->
     </bean>
 
     <!--2 使用有参构造函数注入-->
