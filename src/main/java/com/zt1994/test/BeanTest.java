@@ -3,6 +3,7 @@ package com.zt1994.test;
 import com.zt1994.bean.Apple;
 import com.zt1994.bean.Cat;
 import com.zt1994.bean.Dog;
+import com.zt1994.bean.Emp;
 import com.zt1994.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -57,5 +58,15 @@ public class BeanTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
         UserService userService = context.getBean("userService", UserService.class);
         userService.update();
+    }
+
+    /**
+     * 注入内部bean和级联赋值
+     */
+    @Test
+    public void beanTest5() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
     }
 }
