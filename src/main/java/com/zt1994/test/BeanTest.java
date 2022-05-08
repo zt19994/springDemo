@@ -1,9 +1,6 @@
 package com.zt1994.test;
 
-import com.zt1994.bean.Apple;
-import com.zt1994.bean.Cat;
-import com.zt1994.bean.Dog;
-import com.zt1994.bean.Emp;
+import com.zt1994.bean.*;
 import com.zt1994.collectiontype.Course;
 import com.zt1994.collectiontype.ReadBook;
 import com.zt1994.collectiontype.Stu;
@@ -94,5 +91,19 @@ public class BeanTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
         Course myBean = context.getBean("myBean", Course.class);
         System.out.println(myBean);
+    }
+
+    /**
+     * Bean的生命周期
+     * 后置处理器 MyBeanPost
+     */
+    @Test
+    public void beanTest8() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationBean.xml");
+        Orders orders = context.getBean("orders", Orders.class);
+        System.out.println("第四步 获取创建bean实例对象");
+        System.out.println(orders);
+        // 手动让orders bean实例销毁
+        ((ClassPathXmlApplicationContext) context).close();
     }
 }

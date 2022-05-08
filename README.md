@@ -21,6 +21,22 @@
 1. 默认值 singleton，表示单实例对象
 2. prototype，表示多实例对象
 
+5、bean的生命周期
+1. 通过构造器创建bean实例（无参构造函数）
+2. 为bean的属性设置值和对其他bean引用（调用set方法）
+3. 调用bean的初始化的方法（需要进行配置）
+4. bean可以使用了（对象获取到了）
+5. 当容器关闭时，调用bean销毁的方法（需要进行配置销毁的方法）
+
+6、有后置处理器时，bean的生命周期
+1. 通过构造器创建bean实例（无参构造函数）
+2. 为bean的属性设置值和对其他bean引用（调用set方法）
+3. 把bean实例传递给bean的后置处理器方法 postProcessBeforeInitialization
+4. 调用bean的初始化的方法（需要进行配置）
+5. 把bean实例传递给bean的后置处理器方法 postProcessAfterInitialization
+6. bean可以使用了（对象获取到了）
+7. 当容器关闭时，调用bean销毁的方法（需要进行配置销毁的方法）
+
 #### 2、Bean 管理 注解方式
 
 ### 二、AOP

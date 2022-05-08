@@ -131,4 +131,13 @@
     <!--factoryBean实现-->
     <bean id="myBean" class="com.zt1994.facbean.MyBean"></bean>
 
+    <!--bean的生命周期-->
+    <bean id="orders" class="com.zt1994.bean.Orders" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="orderName" value="test"/>
+    </bean>
+
+    <!--配置后置处理器-->
+    <bean id="myBeanPost" class="com.zt1994.bean.MyBeanPost">
+    </bean>
+
 </beans>
