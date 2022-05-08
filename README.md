@@ -17,6 +17,10 @@
 
 3、FactoryBean实现
 
+4、bean的作用域
+1. 默认值 singleton，表示单实例对象
+2. prototype，表示多实例对象
+
 #### 2、Bean 管理 注解方式
 
 ### 二、AOP
