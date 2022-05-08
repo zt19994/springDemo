@@ -46,6 +46,15 @@
 ```
 
 #### 2、Bean 管理 注解方式
+1、 创建对象
+
+2、 组件扫描配置
+
+3、注解方式实现属性注入
+1. @Autowired：根据属性类型进行自动装配
+2. @Qualifier：根据属性名称进行注入，这个@Qualifier注解的使用，需要和上面@Autowired一起使用
+
+4、完全注解开发，基于java类添加注解 @Configuration
 
 ### 二、AOP
 1、JDK动态代理 JdkProxyTest
