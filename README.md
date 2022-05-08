@@ -37,6 +37,14 @@
 6. bean可以使用了（对象获取到了）
 7. 当容器关闭时，调用bean销毁的方法（需要进行配置销毁的方法）
 
+7、xml自动装配
+
+8、外部属性引入
+```xml
+<!--引入外部属性文件-->
+<context:property-placeholder location="classpath:test.properties"/>
+```
+
 #### 2、Bean 管理 注解方式
 
 ### 二、AOP
