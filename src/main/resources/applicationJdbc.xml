@@ -7,6 +7,12 @@
 						   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 						   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <!--开启组件扫描
+        1 扫描多个包，用逗号隔开
+        2 扫描包上层目录
+    -->
+    <context:component-scan base-package="com.zt1994"/>
+
     <!--引入外部属性文件-->
     <context:property-placeholder location="classpath:druid.properties"/>
 

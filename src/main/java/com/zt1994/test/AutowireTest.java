@@ -6,6 +6,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
+ * AutowireTest
+ *
  * @author zhongtao
  * @date 2022/5/8 22:20
  */
