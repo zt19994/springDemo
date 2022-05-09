@@ -73,4 +73,13 @@ public class BookService {
     public List<Book> findBookList() {
         return bookDao.selectBookList();
     }
+
+    /**
+     * batchAdd
+     *
+     * @param batchArgs
+     */
+    public void batchAdd(List<Object[]> batchArgs) {
+        bookDao.batchAdd(batchArgs);
+    }
 }

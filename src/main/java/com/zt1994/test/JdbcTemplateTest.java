@@ -6,6 +6,9 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * JdbcTemplateTest
  *
@@ -80,5 +83,22 @@ public class JdbcTemplateTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
         BookService bookService = context.getBean("bookService", BookService.class);
         System.out.println(bookService.findBookList());
+    }
+
+    /**
+     * jdbcTemplateBatchAddTest
+     */
+    @Test
+    public void jdbcTemplateBatchAddTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"3", "java", "a"};
+        Object[] o2 = {"4", "java", "a"};
+        Object[] o3 = {"5", "java", "a"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchAdd(batchArgs);
     }
 }

@@ -55,4 +55,10 @@ public interface BookDao {
      */
     List<Book> selectBookList();
 
+    /**
+     * batchAdd
+     *
+     * @param batchArgs
+     */
+    void batchAdd(List<Object[]> batchArgs);
 }

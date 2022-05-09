@@ -81,8 +81,9 @@
 3. 查询返回集合 query(String sql, RowMapper<T> rowMapper, Object... args)
 
 6、批量添加
+1. batchUpdate(String sql, List<Object[]> batchArgs)
 
-7、批量修改
+7、批量修改和删除
 
 ### 四、事务管理
 

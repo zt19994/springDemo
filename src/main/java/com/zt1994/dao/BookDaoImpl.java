@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -98,5 +99,19 @@ public class BookDaoImpl implements BookDao {
         String sql = "SELECT * FROM t_book";
         // 2 调用方法实现
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Book>(Book.class));
+    }
+
+    /**
+     * batchAdd
+     *
+     * @param batchArgs
+     */
+    @Override
+    public void batchAdd(List<Object[]> batchArgs) {
+        // 1 创建sql语句
+        String sql = "INSERT INTO t_book values (?, ?, ?)";
+        // 2 调用方法实现
+        int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
+        System.out.println(Arrays.toString(ints));
     }
 }
