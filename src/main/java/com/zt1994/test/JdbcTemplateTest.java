@@ -101,4 +101,38 @@ public class JdbcTemplateTest {
         batchArgs.add(o3);
         bookService.batchAdd(batchArgs);
     }
+
+    /**
+     * jdbcTemplateBatchUpdateTest
+     */
+    @Test
+    public void jdbcTemplateBatchUpdateTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"C++", "B", "3"};
+        Object[] o2 = {"C++", "B", "4"};
+        Object[] o3 = {"C++", "B", "5"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchUpdate(batchArgs);
+    }
+
+    /**
+     * jdbcTemplateBatchUpdateTest
+     */
+    @Test
+    public void jdbcTemplateBatchDelTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        List<Object[]> batchArgs = new ArrayList<>();
+        Object[] o1 = {"3"};
+        Object[] o2 = {"4"};
+        Object[] o3 = {"5"};
+        batchArgs.add(o1);
+        batchArgs.add(o2);
+        batchArgs.add(o3);
+        bookService.batchDel(batchArgs);
+    }
 }

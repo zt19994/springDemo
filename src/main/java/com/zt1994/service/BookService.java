@@ -82,4 +82,23 @@ public class BookService {
     public void batchAdd(List<Object[]> batchArgs) {
         bookDao.batchAdd(batchArgs);
     }
+
+    /**
+     * batchAdd
+     *
+     * @param batchArgs
+     */
+    public void batchUpdate(List<Object[]> batchArgs) {
+        bookDao.batchUpdate(batchArgs);
+    }
+
+
+    /**
+     * batchAdd
+     *
+     * @param batchArgs
+     */
+    public void batchDel(List<Object[]> batchArgs) {
+        bookDao.batchDel(batchArgs);
+    }
 }

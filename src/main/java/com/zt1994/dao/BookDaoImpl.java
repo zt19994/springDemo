@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * BookImpl
+ * BookDaoImpl
  *
  * @author zhongtao
  * @date 2022/5/9 22:18
@@ -110,6 +110,34 @@ public class BookDaoImpl implements BookDao {
     public void batchAdd(List<Object[]> batchArgs) {
         // 1 创建sql语句
         String sql = "INSERT INTO t_book values (?, ?, ?)";
+        // 2 调用方法实现
+        int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
+        System.out.println(Arrays.toString(ints));
+    }
+
+    /**
+     * batchUpdate
+     *
+     * @param batchArgs
+     */
+    @Override
+    public void batchUpdate(List<Object[]> batchArgs) {
+        // 1 创建sql语句
+        String sql = "UPDATE t_book SET book_name = ?, b_status = ? WHERE book_id = ?";
+        // 2 调用方法实现
+        int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
+        System.out.println(Arrays.toString(ints));
+    }
+
+    /**
+     * batchDel
+     *
+     * @param batchArgs
+     */
+    @Override
+    public void batchDel(List<Object[]> batchArgs) {
+        // 1 创建sql语句
+        String sql = "DELETE FROM t_book WHERE book_id = ?";
         // 2 调用方法实现
         int[] ints = jdbcTemplate.batchUpdate(sql, batchArgs);
         System.out.println(Arrays.toString(ints));

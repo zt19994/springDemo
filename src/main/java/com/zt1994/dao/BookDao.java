@@ -61,4 +61,18 @@ public interface BookDao {
      * @param batchArgs
      */
     void batchAdd(List<Object[]> batchArgs);
+
+    /**
+     * batchUpdate
+     *
+     * @param batchArgs
+     */
+    void batchUpdate(List<Object[]> batchArgs);
+
+    /**
+     * batchDel
+     *
+     * @param batchArgs
+     */
+    void batchDel(List<Object[]> batchArgs);
 }
