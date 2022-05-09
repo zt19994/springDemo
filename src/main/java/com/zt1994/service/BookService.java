@@ -19,9 +19,28 @@ public class BookService {
 
     /**
      * add book
+     *
      * @param book
      */
     public void addBook(Book book) {
         bookDao.add(book);
+    }
+
+    /**
+     * update book
+     *
+     * @param book
+     */
+    public void updateBook(Book book) {
+        bookDao.update(book);
+    }
+
+    /**
+     * del book
+     *
+     * @param id
+     */
+    public void delBook(Integer id) {
+        bookDao.del(id);
     }
 }

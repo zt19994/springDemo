@@ -12,7 +12,22 @@ public interface BookDao {
 
     /**
      * add book
+     *
      * @param book
      */
     void add(Book book);
+
+    /**
+     * update book
+     *
+     * @param book
+     */
+    void update(Book book);
+
+    /**
+     * del book
+     *
+     * @param id
+     */
+    void del(Integer id);
 }

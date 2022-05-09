@@ -30,4 +30,30 @@ public class BookDaoImpl implements BookDao {
         int add = jdbcTemplate.update(sql, book.getBookId(), book.getBookName(), book.getbStatus());
         System.out.println(add);
     }
+
+    /**
+     * update book
+     *
+     * @param book
+     */
+    @Override
+    public void update(Book book) {
+        // 1 创建sql语句
+        String sql = "UPDATE t_book SET book_name = ?, b_status = ? WHERE book_id = ?";
+        // 2 调用方法实现
+        jdbcTemplate.update(sql, book.getBookName(), book.getbStatus(), book.getBookId());
+    }
+
+    /**
+     * del book
+     *
+     * @param id
+     */
+    @Override
+    public void del(Integer id) {
+        // 1 创建sql语句
+        String sql = "DELETE FROM t_book WHERE book_id = ?";
+        // 2 调用方法实现
+        jdbcTemplate.update(sql, id);
+    }
 }
