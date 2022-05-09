@@ -5,6 +5,8 @@ import com.zt1994.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * BookService
  *
@@ -42,5 +44,33 @@ public class BookService {
      */
     public void delBook(Integer id) {
         bookDao.del(id);
+    }
+
+    /**
+     * count book
+     *
+     * @return
+     */
+    public int countBook() {
+        return bookDao.selectCount();
+    }
+
+    /**
+     * find book
+     *
+     * @param id
+     * @return
+     */
+    public Book findBook(Integer id) {
+        return bookDao.selectBookInfo(id);
+    }
+
+    /**
+     * findBookList
+     *
+     * @return
+     */
+    public List<Book> findBookList() {
+        return bookDao.selectBookList();
     }
 }

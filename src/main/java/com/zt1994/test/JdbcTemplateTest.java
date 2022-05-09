@@ -51,4 +51,34 @@ public class JdbcTemplateTest {
         BookService bookService = context.getBean("bookService", BookService.class);
         bookService.delBook(1);
     }
+
+    /**
+     * jdbcTemplateQueryCountTest
+     */
+    @Test
+    public void jdbcTemplateQueryCountTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.countBook());
+    }
+
+    /**
+     * jdbcTemplateQueryForObjectTest
+     */
+    @Test
+    public void jdbcTemplateQueryObjectTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.findBook(1));
+    }
+
+    /**
+     * jdbcTemplateQueryListTest
+     */
+    @Test
+    public void jdbcTemplateQueryListTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationJdbc.xml");
+        BookService bookService = context.getBean("bookService", BookService.class);
+        System.out.println(bookService.findBookList());
+    }
 }

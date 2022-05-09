@@ -76,6 +76,9 @@
 4、删除
 
 5、查询
+1. 查询返回某个值 queryForObject(String sql, Class<T> requiredType)
+2. 查询返回对象 queryForObject(String sql, RowMapper<T> rowMapper, Object... args)
+3. 查询返回集合 query(String sql, RowMapper<T> rowMapper, Object... args)
 
 6、批量添加
 

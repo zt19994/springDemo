@@ -2,8 +2,11 @@ package com.zt1994.dao;
 
 import com.zt1994.entity.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * BookImpl
@@ -55,5 +58,45 @@ public class BookDaoImpl implements BookDao {
         String sql = "DELETE FROM t_book WHERE book_id = ?";
         // 2 调用方法实现
         jdbcTemplate.update(sql, id);
+    }
+
+    /**
+     * count
+     *
+     * @return
+     */
+    @Override
+    public Integer selectCount() {
+        // 1 创建sql语句
+        String sql = "SELECT COUNT(1) FROM t_book";
+        // 2 调用方法实现
+        return jdbcTemplate.queryForObject(sql, Integer.class);
+    }
+
+    /**
+     * selectBookInfo
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Book selectBookInfo(Integer id) {
+        // 1 创建sql语句
+        String sql = "SELECT * FROM t_book WHERE book_id = ?";
+        // 2 调用方法实现
+        return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<Book>(Book.class), id);
+    }
+
+    /**
+     * selectBookList
+     *
+     * @return
+     */
+    @Override
+    public List<Book> selectBookList() {
+        // 1 创建sql语句
+        String sql = "SELECT * FROM t_book";
+        // 2 调用方法实现
+        return jdbcTemplate.query(sql, new BeanPropertyRowMapper<Book>(Book.class));
     }
 }

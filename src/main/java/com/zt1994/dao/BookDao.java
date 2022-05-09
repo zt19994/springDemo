@@ -2,6 +2,8 @@ package com.zt1994.dao;
 
 import com.zt1994.entity.Book;
 
+import java.util.List;
+
 /**
  * BookDao
  *
@@ -30,4 +32,27 @@ public interface BookDao {
      * @param id
      */
     void del(Integer id);
+
+    /**
+     * count
+     *
+     * @return
+     */
+    Integer selectCount();
+
+    /**
+     * selectBookInfo
+     *
+     * @param id
+     * @return
+     */
+    Book selectBookInfo(Integer id);
+
+    /**
+     * selectBookList
+     *
+     * @return
+     */
+    List<Book> selectBookList();
+
 }
