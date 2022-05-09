@@ -64,6 +64,10 @@
 3、注解方式配置aop AopTest
 
 ### 三、JdbcTemplate
+1、准备工作
+1. 引入相关jar包
+2. 在spring配置文件中配置数据库连接池
+3. 配置JdbcTemplate对象，注入DataSource
 
 ### 四、事务管理
 
