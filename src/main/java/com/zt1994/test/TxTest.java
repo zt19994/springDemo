@@ -9,7 +9,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import java.lang.management.PlatformManagedObject;
 
 /**
- * JdbcTemplateTest
+ * TxTest
  *
  * @author zhongtao
  * @date 2022/5/9 22:40
@@ -17,7 +17,7 @@ import java.lang.management.PlatformManagedObject;
 public class TxTest {
 
     /**
-     * jdbcTemplateAddTest
+     * txTest
      */
     @Test
     public void txTest() {
@@ -26,5 +26,15 @@ public class TxTest {
         accountService.accountMoney();
     }
 
+
+    /**
+     * txXMLTest
+     */
+    @Test
+    public void txXMLTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:applicationTXXml.xml");
+        AccountService accountService = context.getBean("accountService", AccountService.class);
+        accountService.accountMoney();
+    }
 
 }
