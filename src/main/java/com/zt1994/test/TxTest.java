@@ -4,6 +4,9 @@ import com.zt1994.service.AccountService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.transaction.PlatformTransactionManager;
+
+import java.lang.management.PlatformManagedObject;
 
 /**
  * JdbcTemplateTest
