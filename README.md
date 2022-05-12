@@ -98,3 +98,7 @@
 
 ### 五、Spring5新功能
 1、整合log4j2日志框架
+
+2、@Nullable
+
+3、GenericApplicationContext 函数式风格注册对象
