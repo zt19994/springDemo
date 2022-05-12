@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  * @author zhongtao
  * @date 2022/5/11 23:16
  */
-@Configuration
+//@Configuration
 @ComponentScan(basePackages = {"com.zt1994"})
 @EnableTransactionManagement
 @PropertySource(value = "classpath:druid.properties")
