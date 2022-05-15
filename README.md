@@ -102,3 +102,7 @@
 2、@Nullable
 
 3、GenericApplicationContext 函数式风格注册对象
+
+4、Spring Webflux
+1. 基于注解方式
+2. 基于函数式编程方式
